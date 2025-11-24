@@ -1,37 +1,50 @@
-PImage flower;
-PImage monkey;
-float flowerX = 0;
-float flowerY = 40;
+PImage orange;
+PImage Head;
+PImage Ava;
+PImage Orange;
+float orangeX = 0;
+float vegY = 50;
 
 void setup() {
   size(400, 400);
-  flower= loadImage("CroppedFlower.png");
-  monkey= loadImage("Monkey.jpg");
+  orange= loadImage("Orange.png");
+  Head= loadImage("Head.png");
+  Ava= loadImage("avacado.png");
+  Orange= loadImage("orange2.png");
   imageMode(CENTER);
 }
 void draw() {
   background(#ff00ff);
-  println(flowerX);
-  // to increase speed you need to multiply by any number so (frameCount*0.5 or 1,5,3 ect,);
-  translate( flowerX, 30);
-  flowerX = flowerX + 1;
-  if (flowerX> width + 20) {
-    flowerX = -50;
+  println(X);
+  //orange
+  translate( orangeX, 30);
+  orangeX = orangeX + 1;
+  if (orangeX> width + 20) {
+    orangeX = -50;
   }
   rotate(radians(frameCount*(360/(2*PI*10))));
-  image(flower, 0, 0, 20, 20);
+  image(orange, 0, 0, 137, 110);
   resetMatrix();
-  println(flowerY);
-  translate( flowerX, 100);
+  //Head
+  translate( orangeX, 100);
   rotate(radians(frameCount*(360/(2*PI*10))));
-  image(monkey, 0, 0, 20, 20);
+  image(Head, 0, 0, 50, 70);
   resetMatrix();
-  translate(flowerY + 300, 50);
+  //Ava
+  translate(vegY + 300, 80);
   rotate(radians(frameCount*(360/(-2*PI*10))));
-  image(flower, 0, 0, 20, 30);
-  flowerY = flowerY -1;
-  if (flowerY > width- 30) {
-    flowerY = 50;
+  image(Ava, 0, 0, 100, 110);
+  vegY = vegY -1 ;
+  if (vegY > width - 30) {
+    vegY = 50;
+  }
+  resetMatrix();
+  //Orange2
+  translate(vegY+300, 150);
+  rotate(radians(frameCount*(360/(-2*PI*10))));
+  image(Orange, 0, 0, 120, 150);
+  if (vegY > width - 30) {
+    vegY= 50;
   }
 }
-  //M-207
+//M-207
